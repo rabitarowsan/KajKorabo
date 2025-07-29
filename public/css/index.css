@@ -1,0 +1,444 @@
+:root {
+    --primary: #f77f00;
+    --accent: #f28a00;
+    --secondary: #86cd02;
+    --heading: #003049;
+    --text: #333333;
+    --background: #f9f9f9;
+    --white: #ffffff;
+    --card: #ffffff;
+    --dark: #2c3e50;
+    --light: #ecf0f1;
+    --gray: #bdc3c7;
+    --error: #e74c3c;
+    --success: #2ecc71;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+#bbi-startup-services-section-2024 {
+    background-color: var(--background);
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#bbi-startup-services-section-2024::before,
+#bbi-startup-services-section-2024::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: url('https://brandbusinessinfluence.com/wp-content/uploads/2024/08/portfolio_agency_memphis_2.png') no-repeat center center / contain;
+    opacity: 0.1;
+    z-index: 0;
+    animation: bbi-startup-rotate-2024 30s infinite linear;
+}
+
+#bbi-startup-services-section-2024::before {
+    top: -100px;
+    left: -100px;
+}
+
+#bbi-startup-services-section-2024::after {
+    bottom: -100px;
+    right: -100px;
+}
+
+@keyframes bbi-startup-rotate-2024 {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.bbi-startup-services-content-2024 {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.bbi-startup-section-title-2024 {
+    font-size: 3rem;
+    color: var(--heading);
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.bbi-startup-section-title-2024::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    border-radius: 2px;
+}
+
+.bbi-startup-section-subtitle-2024 {
+    font-size: 1.3rem;
+    color: var(--text);
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bbi-startup-service-filters-2024 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.bbi-startup-filter-btn-2024 {
+    background-color: var(--white);
+    color: var(--text);
+    border: 2px solid var(--primary);
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: bold;
+}
+
+.bbi-startup-filter-btn-2024:hover,
+.bbi-startup-filter-btn-2024.active {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.bbi-startup-services-grid-2024 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.bbi-startup-service-card-2024 {
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    padding: 40px 30px;
+    transition: var(--transition);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.bbi-startup-service-card-2024::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.bbi-startup-service-card-2024:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.bbi-startup-service-card-2024:hover::before {
+    transform: scaleX(1);
+}
+
+.bbi-startup-service-icon-2024 {
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.bbi-startup-service-card-2024:hover .bbi-startup-service-icon-2024 {
+    transform: scale(1.1);
+}
+
+.bbi-startup-icon-image-2024 {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.bbi-startup-service-title-2024 {
+    font-size: 1.5rem;
+    color: var(--heading);
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.bbi-startup-service-card-2024:hover .bbi-startup-service-title-2024 {
+    color: var(--primary);
+}
+
+.bbi-startup-service-description-2024 {
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.bbi-startup-learn-more-2024 {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--primary);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: var(--transition);
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.bbi-startup-learn-more-2024:hover {
+    background-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(247, 127, 0, 0.3);
+}
+
+.bbi-startup-service-details-2024 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.bbi-startup-service-details-2024.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.bbi-startup-service-details-content-2024 {
+    background-color: var(--white);
+    padding: 50px;
+    border-radius: 15px;
+    max-width: 700px;
+    width: 90%;
+    position: relative;
+    transform: scale(0.9);
+    transition: var(--transition);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.bbi-startup-service-details-2024.active .bbi-startup-service-details-content-2024 {
+    transform: scale(1);
+}
+
+.bbi-startup-close-details-2024 {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--text);
+    transition: color 0.3s ease;
+}
+
+.bbi-startup-close-details-2024:hover {
+    color: var(--primary);
+}
+
+.bbi-startup-details-title-2024 {
+    font-size: 2.5rem;
+    color: var(--heading);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.bbi-startup-details-description-2024 {
+    font-size: 1.2rem;
+    color: var(--text);
+    margin-bottom: 30px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.bbi-startup-details-features-2024 {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.bbi-startup-details-features-2024 li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: var(--text);
+}
+
+.bbi-startup-details-features-2024 li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--secondary);
+    font-weight: bold;
+}
+
+.bbi-startup-cta-container-2024 {
+    text-align: center;
+}
+
+.bbi-startup-cta-button-2024 {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: var(--primary);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: var(--transition);
+    margin-bottom: 10px;
+}
+
+.bbi-startup-cta-button-2024:hover {
+    background-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(247, 127, 0, 0.3);
+}
+
+.bbi-startup-cta-subtext-2024 {
+    font-size: 0.9rem;
+    color: var(--text);
+    opacity: 0.7;
+}
+
+@keyframes bbi-startup-pulsate-2024 {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.bbi-startup-pulsate-2024 {
+    animation: bbi-startup-pulsate-2024 1s ease-in-out;
+}
+
+@keyframes bbi-startup-confetti-fall-2024 {
+    0% { transform: translateY(-100vh) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(720deg); }
+}
+
+.bbi-startup-confetti-2024 {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    pointer-events: none;
+    animation: bbi-startup-confetti-fall-2024 linear forwards;
+    z-index: 9999;
+}
+
+@media screen and (max-width: 768px) {
+    .bbi-startup-services-grid-2024 {
+        grid-template-columns: 1fr;
+    }
+
+    .bbi-startup-service-card-2024 {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .bbi-startup-section-title-2024 {
+        font-size: 2.5rem;
+    }
+
+    .bbi-startup-section-subtitle-2024 {
+        font-size: 1.1rem;
+    }
+
+    .bbi-startup-service-details-content-2024 {
+        padding: 40px 30px;
+    }
+
+    .bbi-startup-details-title-2024 {
+        font-size: 2rem;
+    }
+
+    .bbi-startup-details-description-2024 {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .bbi-startup-section-title-2024 {
+        font-size: 2rem;
+    }
+
+    .bbi-startup-section-subtitle-2024 {
+        font-size: 1rem;
+    }
+
+    .bbi-startup-service-card-2024 {
+        padding: 30px 20px;
+    }
+
+    .bbi-startup-service-title-2024 {
+        font-size: 1.3rem;
+    }
+
+    .bbi-startup-service-description-2024 {
+        font-size: 1rem;
+    }
+
+    .bbi-startup-details-title-2024 {
+        font-size: 1.8rem;
+    }
+
+    .bbi-startup-details-description-2024 {
+        font-size: 1rem;
+    }
+
+    .bbi-startup-cta-button-2024 {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+    }
+}
+
+
+@keyframes bbi-startup-pulsate-2024 {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.bbi-startup-pulsate-2024 {
+    animation: bbi-startup-pulsate-2024 1s ease-in-out;
+}
+
+@keyframes bbi-startup-confetti-fall-2024 {
+    0% { transform: translateY(-100vh) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(720deg); }
+}
+
+.bbi-startup-confetti-2024 {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    pointer-events: none;
+    animation: bbi-startup-confetti-fall-2024 linear forwards;
+    z-index: 9999;
+}
