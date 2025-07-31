@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Service;
+use App\Models\ServiceImage;
+
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,11 +16,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        Service::factory(50)->create()->each(function ($service) {
+        // Attach 1 to 3 random images per service
+        ServiceImage::factory(rand(1, 3))->create([
+            'service_id' => $service->id,
         ]);
-    }
+    });
+    }//
 }
