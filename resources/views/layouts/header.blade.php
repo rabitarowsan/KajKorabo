@@ -1,65 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'KajKorabo')</title>
-    <!-- Add these in your <head> or before </body> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
-    <!-- JS -->
-    <script src="{{ asset('js/header.js') }}"></script>
-</head>
-<body>
-    <div class="container">
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Brand</a>
-    </div>
+<!-- CSS -->
+<link rel="stylesheet" href="{{ asset('assets/css/header.css') }}">
+<!-- JS -->
+<script src="{{ asset('assets/js/header.js') }}"></script>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <div class="navbar-right">
-      <form class="search-form" role="search">
-        <div class="form-group pull-right" id="search">
-          <input type="text" class="form-control" placeholder="Search">
-          <button type="submit" class="form-control form-control-submit">Submit</button>
-          <span class="search-label"><i class="glyphicon glyphicon-search"></i></span>
+
+<nav class="nav">
+        <div class="container">
+            <div class="logo">
+                <a href="#">
+                    <img src="{{ asset('uploads\KajKorabo-removebg-preview.png') }}" alt="Your Logo" style="height:100px;">
+                </a>
+            </div>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+        
+                    <li>
+                        <div class="navbar-search">
+                          <div id="wrap">
+                            <form action="" autocomplete="on">
+                              <input id="search" name="search" type="text" placeholder="What're we looking for?">
+                              <input id="search_submit" value="Rechercher" type="submit">
+                            </form>
+                          </div>
+                        </div>
+
+                    </li>
+
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
         </div>
-      </form>
-      </div>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-  </nav>
-  
-</div>
-</body>
-</html>
+    </nav>
+
+    
+
+<!-- Jquery needed -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+
+<!-- Function used to shrink nav bar removing paddings and adding black background -->
+    <script>
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.nav').removeClass('affix');
+            }
+        });
+    </script>

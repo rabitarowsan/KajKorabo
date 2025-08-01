@@ -9,19 +9,45 @@ class Service extends Model
 {
     use HasFactory;
 
-    // Allow mass assignment for these columns
     protected $fillable = [
-        'name',
-        'description',
+        'title',
+        'slug',
+        'category',
         'price',
-        'discount',
-        'estimated_delivery',
-        'budget',
+        'discount_percentage',
+        'reviews',
+        'short_description',
+        'long_description',
+        'estimated_delivery_time',
+        'is_featured',
+        'status',
     ];
 
-    // Optional: Relationship with service_images
-    public function images()
+    /**
+     * Accessor: Get the final price after applying the discount
+     */
+    public function getDiscountedPriceAttribute()
     {
-        return $this->hasMany(ServiceImage::class);
+        if ($this->discount_percentage > 0) {
+            return round($this->price * (1 - $this->discount_percentage / 100), 2);
+        }
+
+        return $this->price;
+    }
+
+    /**
+     * Scope: Only featured services
+     */
+    public function scopeFeatured($query)
+    {
+        return $query->where('is_featured', true);
+    }
+
+    /**
+     * Scope: Only active services
+     */
+    public function scopeActive($query)
+    {
+        return $query->where('status', 'active');
     }
 }

@@ -16,9 +16,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Service::factory(50)->create()->each(function ($service) {
+        Service::factory(44)->create()->each(function ($service) {
         // Attach 1 to 3 random images per service
-        ServiceImage::factory(rand(1, 3))->create([
+        ServiceImage::factory(rand(2, 4))->create([
             'service_id' => $service->id,
         ]);
     });
