@@ -35,6 +35,12 @@ class Service extends Model
         return $this->price;
     }
 
+    public function images()
+    {
+        return $this->hasMany(ServiceImage::class);
+    }
+
+
     /**
      * Scope: Only featured services
      */

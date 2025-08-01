@@ -21,4 +21,10 @@ class ServiceController extends Controller
         $products = Service::all();
         return view('products', compact('products'));
     }
+
+    public function show($id)
+    {
+        $service = Service::with('images')->findOrFail($id);
+        return view('details', compact('service'));
+    }
 }

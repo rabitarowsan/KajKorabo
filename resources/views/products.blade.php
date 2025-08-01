@@ -4,9 +4,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <ul class="catCardList">
+    <H1 style="text-align:center; font-size:2.8em; font-weight:700; letter-spacing:1px; ">ALL PRODUCTS</H1>
     @foreach($products as $product)
     <li class="catCardList">
-        <div class="catCard"><a href="#"><img src="http://placehold.it/221x200" alt=""></a>
+        <div class="catCard"><a href=""{{ route('products.details', ['id' => $product->id]) }}""><img src="{{ $product->images->first()->image }}" alt="{{ $product->title }}" class="product-image" onerror="this.src='https://via.placeholder.com/221x200?text=Image+Not+Available'"></a>
             <div class="lowerCatCard">
                 <h3>{{ $product->title }}</h3>
                 <h4>Category: {{ $product->category }}</h4>
@@ -35,8 +36,8 @@
                     @endfor
                     <span class="rating-value">({{ number_format($rating, 1) }})</span>
                 </div>
-                <div id="catCardButton" class="button"><a href="#">View Details</a></div>
-            </div>
+                <div id="catCardButton" class="button"><a href="{{ route('products.details', ['id' => $product->id]) }}">View Details</a></div>
+            </div> 
         </div>
     </li>
     @endforeach
