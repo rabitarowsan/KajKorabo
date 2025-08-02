@@ -16,12 +16,40 @@ class ServiceController extends Controller
         return view('services', compact('categories'));
     }
     // For /products page (all products)
-    public function products()
+    public function products(Request $request)
     {
-        $products = Service::all();
-        return view('products', compact('products'));
+        $slug = $request->query('category');
+
+         $categoryMap = [
+        'mobile-app-development' => 'Mobile App Development',
+        'digital-marketing-seo' => 'Digital Marketing & SEO',
+        'ai-data-services' => 'AI & Data Services',
+        'software-automation' => 'Software & Automation',
+        'cybersecurity' => 'Cybersecurity',
+        'ui-ux-design' => 'UI/UX & Design',
+        'multimedia-visuals' => 'Multimedia & Visuals',
+        'web-development' => 'Web Development',
+        'business-enterprise-solutions' => 'Business & Enterprise Solutions',
+        'e-commerce-solutions' => 'E-Commerce Solutions',
+        'cloud-devops' => 'Cloud & DevOps'
+         ];
+     
+         if ($slug && isset($categoryMap[$slug])) {
+             $category = $categoryMap[$slug];
+             $products = Service::where('category', $category)->get();
+         } else {
+             $category = null;
+             $products = Service::all();
+         }
+
+        return view('products', [
+            'products' => $products,
+            'filteredCategory' => $category
+        ]);
     }
 
+
+    
     public function show($id)
     {
         $service = Service::with('images')->findOrFail($id);

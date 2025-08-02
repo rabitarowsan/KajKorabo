@@ -3,6 +3,22 @@
 <!-- Font Awesome 6 Free CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
+@include('dekhi')
+
+@if(isset($filteredCategory) && $filteredCategory)
+    <h1 style="text-align:center; font-size:2.8em; font-weight:700; letter-spacing:1px;">
+        Products in "{{ $filteredCategory }}"
+    </h1>
+@else
+    <h1 style="text-align:center; font-size:2.8em; font-weight:700; letter-spacing:1px;">
+        ALL PRODUCTS
+    </h1>
+@endif
+
+
+
+
+
 <ul class="catCardList">
     <H1 style="text-align:center; font-size:2.8em; font-weight:700; letter-spacing:1px; ">ALL PRODUCTS</H1>
     @foreach($products as $product)

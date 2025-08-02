@@ -12,4 +12,6 @@ class ProductController extends Controller
         $product = Service::findOrFail($id);
         return view('products.show', compact('product'));
     }
+
+    
 }

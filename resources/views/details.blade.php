@@ -1,10 +1,14 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
 
 <!-- Add these to your head section -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css">
+<!-- Tempus Dominus (for Bootstrap 4) -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/css/tempusdominus-bootstrap-4.min.css" />
+
 
 <!-- CSS -->
 <link rel="stylesheet" href="{{ asset('assets/css/details.css') }}">
@@ -17,9 +21,11 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"><div class="pd-wrap">
-		
+
+
+
    
- 
+@include('dekhi')
     
     <<div class="pd-wrap">
     <div class="container">
@@ -112,35 +118,39 @@
                     <button type="button" class="round-black-btn" data-toggle="modal" data-target=".bd-example-modal-lg">Contact to Order</button>
                     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
+                      <div class="modal-content p-4">
                         <form method="POST" action="{{ route('products.details', $service->id) }}">
                             @csrf
-                        
-                            <div class="form-group">
+                            <div class="form-group mb-3">
                                 <label for="fullName">FULL NAME</label>
                                 <input type="text" class="form-control" name="fullName" value="{{ old('fullName') }}" required>
                                 @error('fullName') <small class="text-danger">{{ $message }}</small> @enderror
                             </div>
                         
-                            <div class="form-group">
+                            <div class="form-group mb-3">
                                 <label for="email">EMAIL</label>
                                 <input type="email" class="form-control" name="email" value="{{ old('email') }}" required>
                                 @error('email') <small class="text-danger">{{ $message }}</small> @enderror
                             </div>
                         
-                            <div class="form-group">
+                            <div class="form-group mb-3">
                                 <label for="phoneNumber">PHONE NUMBER</label>
                                 <input type="text" class="form-control" name="phoneNumber" value="{{ old('phoneNumber') }}" required>
                                 @error('phoneNumber') <small class="text-danger">{{ $message }}</small> @enderror
                             </div>
                         
-                            <div class="form-group">
+                            <div class="form-group mb-3">
                                 <label for="meetingTime">AVAILABLE DATE & TIME</label>
-                                <input type="text" class="form-control datetimepicker" name="meetingTime" value="{{ old('meetingTime') }}" required>
+                                <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                                    <input type="text" name="meetingTime" class="form-control datetimepicker-input" data-target="#datetimepicker1" required/>
+                                    <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                </div>
                                 @error('meetingTime') <small class="text-danger">{{ $message }}</small> @enderror
                             </div>
                         
-                            <button type="submit" class="btn round-black-btn" style="float:right;">SUBMIT</button>
+                            <button type="submit" class="btn round-black-btn float-right mt-3" style="float:right;">SUBMIT</button>
                         </form>
                       </div>
                     </div>
@@ -178,40 +188,21 @@
                     @endif
                     
             
-            <form method="POST" action="{{ route('products.details', $service->id) }}">
-                @csrf
             
-                <div class="form-group">
-                    <label for="fullName">FULL NAME</label>
-                    <input type="text" class="form-control" name="fullName" value="{{ old('fullName') }}" required>
-                    @error('fullName') <small class="text-danger">{{ $message }}</small> @enderror
-                </div>
-            
-                <div class="form-group">
-                    <label for="email">EMAIL</label>
-                    <input type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-                    @error('email') <small class="text-danger">{{ $message }}</small> @enderror
-                </div>
-            
-                <div class="form-group">
-                    <label for="phoneNumber">PHONE NUMBER</label>
-                    <input type="text" class="form-control" name="phoneNumber" value="{{ old('phoneNumber') }}" required>
-                    @error('phoneNumber') <small class="text-danger">{{ $message }}</small> @enderror
-                </div>
-            
-                <div class="form-group">
-                    <label for="meetingTime">AVAILABLE DATE & TIME</label>
-                    <input type="text" class="form-control datetimepicker" name="meetingTime" value="{{ old('meetingTime') }}" required>
-                    @error('meetingTime') <small class="text-danger">{{ $message }}</small> @enderror
-                </div>
-            
-                <button type="submit" class="btn round-black-btn" style="float:right;">SUBMIT</button>
-            </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="	sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<!-- Then Bootstrap 4 bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Then other plugins -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/js/tempusdominus-bootstrap-4.min.js"></script>
+
+
+

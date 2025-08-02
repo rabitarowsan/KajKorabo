@@ -61,7 +61,7 @@
       <h2>Websites based on Laravel Framework</h2>
       <p>Laravel is a powerful PHP framework designed for modern web application development.
 It offers elegant syntax, built-in security, and tools that accelerate scalable and maintainable development.</p>
-      <a href="#" class=btn>Details</a>
+      <a href="{{ route('products') }}" class=btn>Details</a>
     </div>
   </div>
 </section>

@@ -1,5 +1,6 @@
 <?php use Illuminate\Support\Str; ?>
 
+@include('dekhi')
 
 <!-- CSS -->
 <link rel="stylesheet" href="{{ asset('assets/css/services.css') }}">
@@ -27,13 +28,13 @@
                                  alt="{{ $category->category }}" />
 						</div>
 						<h3>
-							<a href="{{ route('products.category', ['category' => Str::slug($category->category)]) }}">
+							<a href="{{ route('products', ['category' => Str::slug($category->category)]) }}">
 								{{ $category->category }}
 							</a>
 						</h3>
 						<p>Explore our {{ $category->category }} services.</p>
 						<a class="read-more-btn"
-						   href="{{ route('products.category', ['category' => Str::slug($category->category)]) }}">
+						   href="{{ route('products', ['category' => Str::slug($category->category)]) }}">
 							<i class="fa-solid fa-angles-right"></i>
 						</a>
 					</div>
